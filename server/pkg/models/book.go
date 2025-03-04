@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/79354/go-bookstore/pkg/config"
+	"go-bookstore/server/pkg/config"
 	"github.com/jinzhu/gorm"
 )
 
@@ -12,7 +12,7 @@ type Book struct{
 
 	Name 		string `json:"name"`
 	Author 		string `json:"author"`
-	Publication string `json: "publication"`
+	Publication string `json:"publication"`
 }
 
 func init(){
@@ -26,7 +26,7 @@ func init(){
 	Helps handle the sql queries
 */
 
-func (* b Book) AddBook() *Book{
+func (b *Book) AddBook() *Book{
 	db.NewRecord(b)
 	db.Create(&b)
 	return b

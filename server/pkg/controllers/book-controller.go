@@ -6,14 +6,10 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/79354/go-bookstore/pkg/models"
-	"github.com/79354/go-bookstore/pkg/utils"
+	"go-bookstore/server/pkg/models"
+	"go-bookstore/server/pkg/utils"
 	"github.com/gorilla/mux"
 )
-
-/*
-
- */
 
 var NewBook models.Book
 
@@ -88,7 +84,7 @@ func DeleteBook(w http.ResponseWriter, r *http.Request){
 	}
 	book := models.RemoveBook(ID)
 	resp, _:= json.Marshal(book)
-	w.Header.Set("Content-Type", "application/json")
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(resp)
 }
