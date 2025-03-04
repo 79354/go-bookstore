@@ -7,6 +7,9 @@ go-bookstore/
 │   │── pkg/
 │   └── static/
 │── frontend/               # HTML, CSS, JS files (if separate)
+│── main.go/
+│── go.mod/
+│── go.sum/ 
 │── README.md
 
 Control Flow
